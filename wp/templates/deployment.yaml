@@ -27,3 +27,5 @@ spec:
               optional: false
         ports:
         - containerPort: {{ .Values.wp.containerPorts.http }}
+
+
