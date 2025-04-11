@@ -6,7 +6,8 @@ metadata:
 {{- toYaml .Values.db.labels | nindent 4 }}
 spec:
   selector:
-    id: {{ .Values.db.labels.id }}
+    matchLabels:
+      id: {{ .Values.db.labels.id }}
   replicas: {{ .Values.db.replicas }}
   template:
     metadata:

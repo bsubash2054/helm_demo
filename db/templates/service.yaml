@@ -10,4 +10,5 @@ spec:
     protocol: TCP
     targetPort: {{ .Values.db.containerPorts.mysql }}      # the port exposed by Pod (we defined in the deployment as part of `containerPort)
   selector:
-    id: {{ .Values.db.labels.id }}
+    matchLabels:
+      id: {{ .Values.db.labels.id }}  
