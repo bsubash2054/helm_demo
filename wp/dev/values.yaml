@@ -1,6 +1,7 @@
 wp:
   name: wpapp
   labels:
+    id: c0927502
     app: wp
     env: dev
     stack: wordpress
@@ -11,9 +12,9 @@ wp:
   replicas: 10
   configmap:
     ## KEY: "value"
-    APP_ENV: "dev"
+    APP_ENV: dev
     WORDPRESS_DB_HOST: wp-database.db.svc.cluster.local
-    WORDPRESS_DB_NAME: wordpress
-    WORDPRESS_DB_USER: wordpress
+    WORDPRESS_DB_NAME: c0927502
+    WORDPRESS_DB_USER: 3324_user
   containerPorts:
       http: 80
