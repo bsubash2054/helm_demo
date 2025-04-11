@@ -1,20 +1,10 @@
-wp:
-  name: wpapp
+proxy:
+  name: proxy-server
   labels:
     id: c0927502
     app: wp
     env: dev
     stack: wordpress
-  image:
-    repository: wordpress
-    tag: latest
-    pullPolicy: Always
-  replicas: 10
-  configmap:
-    ## KEY: "value"
-    APP_ENV: "dev"
-    WORDPRESS_DB_HOST: "wp-database.wpdb.svc.cluster.local"
-    WORDPRESS_DB_NAME: "wordpress"
-    WORDPRESS_DB_USER: "wordpress"
-  containerPorts:
-      http: 80
+  image_name: bsubash2054/nginx-reverse-proxy
+  containerPort: 80
+  replicas: 1

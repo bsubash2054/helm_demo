@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: proxy-server
+  name: {{ .Values.proxy.name }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.proxy.replicas }}
   selector:
     matchLabels:
-      app: proxy-server
+      app: {{ .Values.proxy.name }}
   template:
     metadata:
       labels:
-        app: proxy-server
+        app: {{ .Values.proxy.name }}
     spec:
       containers:
       - name: proxy-server-container
-        image: bsubash2054/nginx-reverse-proxy
+        image: {{ .Values.proxy.image_name }}
         ports:
-        - containerPort: 80
+        - containerPort: {{ .Values.proxy.containerPort }}
