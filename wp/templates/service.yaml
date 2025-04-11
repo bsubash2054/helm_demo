@@ -12,5 +12,5 @@ spec:
   type: ClusterIP
   selector:
     matchLabels:
-      id: {{ .Values.wp.labels.id }}
+{{- toYaml .Values.wp.labels | nindent 4 }} 
 
